@@ -14,3 +14,7 @@ console.log(path.extname(filePath));
 
 const __file = url.fileURLToPath(import.meta.url);
 console.log(__file); 
+
+const __dirname = path.dirname(__file);
+console.log(__dirname);
+
