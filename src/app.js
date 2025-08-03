@@ -1,27 +1,20 @@
 import express from "express";
-import fs from "fs";
-import dotenv from "dotenv";
-
-dotenv.config
+// import config from "./config/config.js";
+import productRoute from "./routes/productRoute.js";
 
 const app = express();
 
-// app.get("/", (request, response) => {
-//     request.end("hello");
-
-// });
-
-app.get("/products", (req, res) => {
-   try {
-    const products = fs.readFileSync("./src/data/products.json", "utf8");
-
-    // res.send("Iphone 16 pro");
-    const productsObj = JSON.parse(products);
-    res.json(productsObj);
-}catch (err) {
-    res.status(500).send("Error loading products");
-}
+app.get("/", (req, res) => {
+  res.json({
+    name: config.name,
+    port: config.port,
+    version: config.version,
+    status: "OK",
+  });
 });
-app.listen(5000, () => {
-    console.log("server running at port 5000......");
+
+app.use("/", productRoute);
+
+app.listen(config.port, () => {
+  console.log(`server running at port 5000......`);
 });
