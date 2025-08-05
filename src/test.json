@@ -1,8 +1,8 @@
 {
-    "name": "nitin",
-    "age": 21,
-    "address": "jhapa",
-    "email": "abc@gmail.com",
-    "ismail": true,
-    "phoneNumber": 9825041189
+  "name": "nitin",
+  "age": 21,
+  "address": "jhapa",
+  "email": "abc@gmail.com",
+  "ismail": true,
+  "phoneNumber": 9825041189
 }

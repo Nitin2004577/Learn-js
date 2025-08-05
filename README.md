@@ -1,14 +1,18 @@
-Express JS
-
+# Express JS
 
 # npm init -y
-# npm install express 
 
-
+# npm install express
 
 # Cases
+
 1. Sentence case: Hello World
 2. Camel case: helloWorld
 3. Pascal case: HelloWorld
 4. kebab case: hello-world
 5. snake case: hello_world
+
+# Model 
+- Class built from schema, interact  with the database
+- semantics: Always singular, pascal case 
+- For e.g. Product, ProductOrder
