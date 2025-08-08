@@ -18,18 +18,44 @@
 - semantics: Always singular, pascal case
 - For e.g. Product, ProductOrder
 
-# Mongoose 
+# Mongoose
+
 - ODM of Mongoose for Node.js
 - Schema validation
 - Models
 - Middleware
 - Relationship
 
-# Schema 
+# Schema
+
 - id, name, age, email, phone, isActive
-- Structure/rule  of a document/data 
+- Structure/rule of a document/data
 
-# Model 
+# Model
 
-- Class built   from schema, interact with the database 
+- Class built from schema, interact with the database
+-
+
+# Encryption and Decryption
+
+- Encryption: Converting normal readable text to cipher (unreadable) text.
+- for e.g: hello => asas87549843\*7jsdkekan$
+
+-Decryption: Converting cipher text to readable form.
+
+# Types
+
+1. Symmetric: Same key is used for encryption and decryption.
+
+2. Asymmetric: Different Key are used into encryption and decryption for private RSA algorithm. 
+
+ # Hashing 
+
+
+- Type of encryption, this is one way encryption. 
+-Register: Test1111 => aasmndasnmda@3mmmamam(store)
+-Login: Test1111 => aasmndasnmda@3mmmamam(compare)
+
+# Salt
+- Adding random texts in the hash value
 - 
