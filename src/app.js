@@ -3,6 +3,7 @@ import config from "./config/config.js";
 import bodyParser from "body-parser";
 import connectDB from "./config/database.js";
 import productRoute from "./routes/productRoute.js";
+import authRoute from "./routes/authRoute.js";
 // import todoRoutes from "./routes/todoRoute.js";
 // import mongoose from "mongoose";
 
@@ -11,6 +12,7 @@ const app = express();
 connectDB();
 
 app.use(bodyParser.json());
+
 app.get("/", (req, res) => {
   res.json({
     name: config.name,
@@ -21,6 +23,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/products", productRoute);
+app.use("/api/auth", authRoute);
 // app.use("/todos", todoRoutes);
 
 app.listen(config.port, () => {
