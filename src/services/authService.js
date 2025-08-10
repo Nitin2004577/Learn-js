@@ -16,6 +16,7 @@ const login = async (data) => {
     email: user.email,
     password: "",
     phone: user.phone,
+    roles: user.roles,
   };
 };
 
@@ -31,6 +32,7 @@ const register = async (data) => {
     email: data.email,
     password: hashedPassword,
     phone: data.phone,
+    roles: data.roles,
   });
 
   return {
@@ -40,6 +42,7 @@ const register = async (data) => {
     email: registeredUser.email,
     password: "",
     phone: registeredUser.phone,
+    roles: registeredUser.roles,
   };
 };
 export default { register, login };
