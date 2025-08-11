@@ -58,4 +58,20 @@
 
 # Salt
 - Adding random texts in the hash value
-- 
+
+# Auth 
+1. Login success 
+2. Token generated - JWT
+3. store token
+4. Append this token in every request to handle auth 
+
+# JWT - JSON Web Token
+- Used for auth
+- Self verified 
+- Tamper-proof 
+
+### Structure
+1. Header: which algorithms  is used.
+2. Payload: 
+3. Signature: check any things was changed or not.
+

@@ -23,7 +23,7 @@ const login = async (data) => {
 const register = async (data) => {
   const hashedPassword = bcrypt.hashSync(data.password);
 
-    const user = await User.findOne({ email: data.email });
+  const user = await User.findOne({ email: data.email });
   if (user) throw { statusCode: 409, message: "User already exists." };
 
   const registeredUser = await User.create({
