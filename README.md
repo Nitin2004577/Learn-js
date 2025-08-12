@@ -62,7 +62,7 @@
 # Auth 
 1. Login success 
 2. Token generated - JWT
-3. store token
+3. store token: cookie storage, session storage , local storage. 
 4. Append this token in every request to handle auth 
 
 # JWT - JSON Web Token
@@ -74,4 +74,23 @@
 1. Header: which algorithms  is used.
 2. Payload: 
 3. Signature: check any things was changed or not.
+
+# Cookie 
+- can be stored in both server and browser
+- Size: 4KB 
+- Expiry date can be set 
+- Available in all  tab 
+
+# Session storage 
+- Can be stored only in browser 
+- Size: 5MB
+- Expires on tab close
+- Available in one tab only 
+
+
+# Local Storage 
+- Can be stored only in browser 
+- Size: 5MB - 10MB
+- Never Expires
+- Available in all tabs
 
