@@ -1,6 +1,6 @@
 import { max } from "date-fns/fp";
 import authService from "../services/authService.js";
-import { createJWT, verifyJWT } from "../utils/jwt.js";
+import { createJWT } from "../utils/jwt.js";
 
 const login = async (req, res) => {
   const input = req.body;
@@ -22,7 +22,7 @@ const login = async (req, res) => {
 
     // generate token
     const authToken = createJWT(data);
-    res.cookie("authToken", authToken, {maxage: 86400 * 1000});
+    res.cookie("authToken", authToken, {maxAge: 86400 * 1000 });
 
     // const result = await verifyJWT(authToken);
 
@@ -52,6 +52,9 @@ const register = async (req, res) => {
     const userData = req.body; // Get data from request body
 
     const data = await authService.register(input); // Pass it to the service
+
+        const authToken = createJWT(data);
+    res.cookie("authToken", authToken, {maxAge: 86400 * 1000 });
 
     res.status(201).json({
       success: true,

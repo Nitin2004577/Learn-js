@@ -1,6 +1,9 @@
 import productService from "../services/productService.js";
 
-const getProducts = (req, res) => {
+const getProducts = async (req, res) => {
+  //Request query 
+  const product = await productService.getProducts(req.query);
+  console.log(req.headers.cookie);
   console.log(req.query);
   const products = productService.getProducts();
   res.status(200).json(products);
