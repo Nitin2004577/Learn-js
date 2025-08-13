@@ -19,10 +19,9 @@ const login = async (req, res) => {
 
     const data = await authService.login(input);
 
-
     // generate token
     const authToken = createJWT(data);
-    res.cookie("authToken", authToken, {maxAge: 86400 * 1000 });
+    res.cookie("authToken", authToken, { maxAge: 86400 * 1000 });
 
     // const result = await verifyJWT(authToken);
 
@@ -53,8 +52,8 @@ const register = async (req, res) => {
 
     const data = await authService.register(input); // Pass it to the service
 
-        const authToken = createJWT(data);
-    res.cookie("authToken", authToken, {maxAge: 86400 * 1000 });
+    const authToken = createJWT(data);
+    res.cookie("authToken", authToken, { maxAge: 86400 * 1000 });
 
     res.status(201).json({
       success: true,

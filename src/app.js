@@ -6,12 +6,16 @@ import productRoute from "./routes/productRoute.js";
 import authRoute from "./routes/authRoute.js";
 // import todoRoutes from "./routes/todoRoute.js";
 // import mongoose from "mongoose";
+import logger from "./middlewares/logger.js";
+import auth from "./middlewares/auth.js";
 
 const app = express();
 
 connectDB();
 
 app.use(bodyParser.json());
+app.use(logger);
+app.use(auth);
 
 app.get("/", (req, res) => {
   res.json({

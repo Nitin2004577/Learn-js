@@ -47,51 +47,74 @@
 
 1. Symmetric: Same key is used for encryption and decryption.
 
-2. Asymmetric: Different Key are used into encryption and decryption for private RSA algorithm. 
+2. Asymmetric: Different Key are used into encryption and decryption for private RSA algorithm.
 
- # Hashing 
+# Hashing
 
-
-- Type of encryption, this is one way encryption. 
--Register: Test1111 => aasmndasnmda@3mmmamam(store)
--Login: Test1111 => aasmndasnmda@3mmmamam(compare)
+- Type of encryption, this is one way encryption.
+  -Register: Test1111 => aasmndasnmda@3mmmamam(store)
+  -Login: Test1111 => aasmndasnmda@3mmmamam(compare)
 
 # Salt
+
 - Adding random texts in the hash value
 
-# Auth 
-1. Login success 
+# Auth
+
+1. Login success
 2. Token generated - JWT
-3. store token: cookie storage, session storage , local storage. 
-4. Append this token in every request to handle auth 
+3. store token: cookie storage, session storage , local storage.
+4. Append this token in every request to handle auth
 
 # JWT - JSON Web Token
+
 - Used for auth
-- Self verified 
-- Tamper-proof 
+- Self verified
+- Tamper-proof
 
 ### Structure
-1. Header: which algorithms  is used.
-2. Payload: 
+
+1. Header: which algorithms is used.
+2. Payload:
 3. Signature: check any things was changed or not.
 
-# Cookie 
-- can be stored in both server and browser
-- Size: 4KB 
-- Expiry date can be set 
-- Available in all  tab 
+# Cookie
 
-# Session storage 
-- Can be stored only in browser 
+- can be stored in both server and browser
+- Size: 4KB
+- Expiry date can be set
+- Available in all tab
+
+# Session storage
+
+- Can be stored only in browser
 - Size: 5MB
 - Expires on tab close
-- Available in one tab only 
+- Available in one tab only
 
+# Local Storage
 
-# Local Storage 
-- Can be stored only in browser 
+- Can be stored only in browser
 - Size: 5MB - 10MB
 - Never Expires
 - Available in all tabs
 
-# Middleware 
+# Middleware
+
+- Function that sits between request and response.
+- Browser sends -----> Request to -----> Server
+  Middleware
+  Server ------> Response ---------> Browser
+
+- FUnction that has the accessibility of both request and response object
+- It has the functionality to go the next function call 
+-
+
+## Usages
+- Logging 
+- Authentication & AUthorization 
+- Error handling
+- Modify request data
+
+
+
