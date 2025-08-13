@@ -3,29 +3,40 @@ import mongoose from "mongoose";
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "product name is required"],
+    required: [true, "Product name is required."],
   },
-  brand: {
-    type: String,
-  },
+  brand: String,
   category: {
     type: String,
-    required: [true, "product category is required"],
+    required: [true, "Product category is required."],
   },
   price: {
     type: Number,
-    required: [true, "product price is required"],
+    required: [true, "Product price is required."],
+    min: [1, "Product price must be positive value."],
   },
   createdAt: {
     type: Date,
-    required: [true, "product createdAt is required"],
+    default: Date.now(),
+    immutable: true,
   },
-  // password: {
-  //   type: String,
-  //   required: [true, "product password is required"],
-
-  // },
+  stock: {
+    type: Number,
+    default: 1,
+    select: false,
+    max: [10000, "Stock items must not exceed 10000."],
+  },
+  imageUrls: {
+    type: [String],
+  },
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: [true, "Created by user id is required."],
+  },
+  description: String,
 });
-const model = mongoose.model("product", productSchema);
+
+const model = mongoose.model("Product", productSchema);
 
 export default model;

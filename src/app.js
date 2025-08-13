@@ -15,7 +15,7 @@ connectDB();
 
 app.use(bodyParser.json());
 app.use(logger);
-app.use(auth);
+// app.use(auth);
 
 app.get("/", (req, res) => {
   res.json({
@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use("/products", productRoute);
+app.use("/products", auth, productRoute);
 app.use("/api/auth", authRoute);
 // app.use("/todos", todoRoutes);
 
