@@ -107,14 +107,12 @@
   Server ------> Response ---------> Browser
 
 - FUnction that has the accessibility of both request and response object
-- It has the functionality to go the next function call 
+- It has the functionality to go the next function call
 -
 
 ## Usages
-- Logging 
-- Authentication & AUthorization 
+
+- Logging
+- Authentication & AUthorization
 - Error handling
 - Modify request data
-
-
-

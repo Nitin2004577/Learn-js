@@ -8,6 +8,7 @@ const getProducts = async (req, res) => {
 };
 
 const getProductById = async (req, res) => {
+  
   // Request params
   try {
     const id = req.params.id;
