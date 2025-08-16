@@ -7,6 +7,7 @@ import { MERCHANT } from "../constants/roles.js";
 
 const router = express.Router();
 
+
 // Ensure all controller methods exist and are functions
 if (
   !productController.getProducts ||
