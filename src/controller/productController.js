@@ -8,7 +8,6 @@ const getProducts = async (req, res) => {
 };
 
 const getProductById = async (req, res) => {
-  
   // Request params
   try {
     const id = req.params.id;
@@ -23,13 +22,16 @@ const getProductById = async (req, res) => {
 
 const createProduct = async (req, res) => {
   const input = req.body;
+  const files = req.files;
+
   console.log(input);
+  console.log(files);
   try {
-    // const data = await productService.createProduct(
-    //   req.body,
-    //   req.files,
-    //   req.user._id
-    // );
+    const data = await productService.createProduct(
+      req.body,
+      req.files,
+      req.user._id
+    );
 
     res.status(201).json(data);
   } catch (error) {
