@@ -7,5 +7,6 @@ const router = express.Router();
 //URL: /api/orders
 router.get("/", auth,  orderController.getOrders);
 router.post("/", auth, orderController.createOrders);
+router.delete("/:id", auth, orderController.deleteOrderOrders);
 
 export default router;
