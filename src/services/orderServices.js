@@ -7,7 +7,9 @@ const orders = await Order.find();
 };
 
 const createOrder = async (data, userId) =>  {
-    return await Order.create({...data, user: userId});
+
+const orderNumber =    crypto.randomUUID();
+    return await Order.create({...data, userId, orderNumber});
 }
 export default { getOrders, createOrder };
    
