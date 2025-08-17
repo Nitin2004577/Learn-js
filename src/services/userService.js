@@ -9,4 +9,10 @@ const getUsers = async () => {
 
 const getUserById = async (id) => {
 const Users = await User.findById();
-}
+};
+
+export default {
+    createUser,
+    getUsers,
+    getUserById
+};

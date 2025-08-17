@@ -11,6 +11,9 @@ import authRoute from "./routes/authRoute.js";
 // import mongoose from "mongoose";
 import logger from "./middlewares/logger.js";
 import auth from "./middlewares/auth.js";
+import roleBasedAuth from "./middlewares/roleBasedAuth.js";
+import userRoutes from "./routes/userRoute.js";
+import { ADMIN } from "./constants/roles.js";
 
 const app = express();
 const upload = multer({ dest: "uploads/" });
@@ -31,8 +34,11 @@ app.get("/", (req, res) => {
 });
 
 app.use("/products", auth, productRoute);
+app.use("/api/products", upload.array("images"), productRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/orders", orderRoutes);
+app.use("/api/users", auth, roleBasedAuth(ADMIN), userRoutes);
+
 // app.use("/todos", todoRoutes);
 
 app.listen(config.port, () => {
