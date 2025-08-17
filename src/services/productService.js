@@ -18,7 +18,7 @@ const getProducts = async (query) => {
   // const min = query.min;
   // const max = query.max;
 
-  if (brand)   filters.brand = { $in: brands.split(",") };
+  if (brands)   filters.brand = { $in: brands.split(",") };
 
   if (category) filters.category = category;
   if (min) filters.price = { $gte: min };

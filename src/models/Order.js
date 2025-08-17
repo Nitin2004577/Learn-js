@@ -1,4 +1,10 @@
 import mongoose from "mongoose";
+import {
+  ORDER_STATUSES_PENDING,
+  ORDER_STATUSES_CONFORMED,
+  ORDER_STATUSES_DELIVERED,
+  ORDER_STATUSES_SHIPPED,
+} from "../constants/orderStatuses.js";
 
 const orderSchema = new mongoose.Schema({
   orderNumber: {
@@ -22,8 +28,13 @@ const orderSchema = new mongoose.Schema({
   ],
   status: {
     type: String,
-    default: "",
-    enum: [],
+    default: ORDER_STATUSES_PENDING,
+    enum: [
+      ORDER_STATUSES_PENDING,
+      ORDER_STATUSES_CONFORMED,
+      ORDER_STATUSES_DELIVERED,
+      ORDER_STATUSES_SHIPPED,
+    ],
 
     totalPrice: {
       type: Number,

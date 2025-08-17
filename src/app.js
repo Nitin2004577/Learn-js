@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use("/products", auth, productRoute);
+app.use("/api/products", auth, productRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/orders", orderRoutes);
 // app.use("/todos", todoRoutes);
