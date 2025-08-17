@@ -69,8 +69,7 @@ const createMerchant = async (req, res) => {
   const userId = req.body.userId;
 
   try {
-    if (!userId)
-      return res.status(400).send("Merchant id is required.");
+    if (!userId) return res.status(400).send("Merchant id is required.");
 
     const data = await userService.createMerchant(userId);
 

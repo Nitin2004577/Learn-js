@@ -14,11 +14,14 @@ import auth from "./middlewares/auth.js";
 import roleBasedAuth from "./middlewares/roleBasedAuth.js";
 import userRoutes from "./routes/userRoute.js";
 import { ADMIN } from "./constants/roles.js";
+import connectCloudinary from "./config/cloudinary.js";
 
 const app = express();
 const upload = multer({ dest: "uploads/" });
 
 connectDB();
+connectCloudinary();
+
 
 app.use(bodyParser.json());
 app.use(logger);
