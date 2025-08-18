@@ -1,12 +1,11 @@
 import fs from "fs";
 import Product from "../models/Product.js";
+import uploadFile from "../utils/file.js";
 
 const getProducts = async (query) => {
-  const {brands, category, min, max, limit, name, offset} = query;
+  const { brands, category, min, max, limit, name, offset } = query;
   // console.log(query);
   // const limit = query.limit;
-
-
 
   const sort = JSON.parse(query.sort || "{}");
   // const offset = query.offset;
@@ -18,7 +17,7 @@ const getProducts = async (query) => {
   // const min = query.min;
   // const max = query.max;
 
-  if (brands)   filters.brand = { $in: brands.split(",") };
+  if (brands) filters.brand = { $in: brands.split(",") };
 
   if (category) filters.category = category;
   if (min) filters.price = { $gte: min };
@@ -31,13 +30,14 @@ const getProducts = async (query) => {
     .skip(offset);
   return products;
 };
- 
+
 const getProductById = async (id) => {
   const product = await Product.findById(id);
   return product;
 };
 
 const createProduct = async (data, createdBy) => {
+  await uploadFile(files);
   const product = await Product.create({ ...data, createdBy });
   return product;
 };

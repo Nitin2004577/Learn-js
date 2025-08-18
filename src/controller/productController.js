@@ -21,11 +21,7 @@ const getProductById = async (req, res) => {
 };
 
 const createProduct = async (req, res) => {
-  const input = req.body;
-  const files = req.files;
-
-  console.log(input);
-  console.log(files);
+  
   try {
     const data = await productService.createProduct(
       req.body,

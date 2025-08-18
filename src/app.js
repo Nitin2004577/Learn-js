@@ -17,7 +17,7 @@ import { ADMIN } from "./constants/roles.js";
 import connectCloudinary from "./config/cloudinary.js";
 
 const app = express();
-const upload = multer({ dest: "uploads/" });
+const upload = multer({ storage: multer.memoryStorage() });
 
 connectDB();
 connectCloudinary();
