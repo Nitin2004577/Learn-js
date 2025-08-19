@@ -4,11 +4,9 @@ const CLOUDINARY_FOLDER = "Mern";
 async function uploadFile(files) {
   for (const file of files) {
     const result = await new Promise((resolve, reject) => {
-      cloudinary.v2.uploader
+      cloudinary.uploader
         .upload_stream(
-          {
-            folder: CLOUDINARY_FOLDER,
-          },
+          { folder: CLOUDINARY_FOLDER },
           (error, uploadResult) => {
             if (error) {
               return reject(error);
