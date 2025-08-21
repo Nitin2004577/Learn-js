@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { ADMIN, MERCHANT, USER } from "../constants/roles.js";
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -12,8 +13,8 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     validate: {
       validator: (value) => {
-        const emailRegex =
-          /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/;
+        const emailRegex = /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/;
+
         return emailRegex.test(value);
       },
       message: "Invalid email address.",
@@ -22,13 +23,12 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, "User password is required."],
-    minlength: [6, "Password length must be greater than 6."],
-    // select: false,
+    minLength: [6, "Password length must be greater than 6."],
   },
   roles: {
     type: [String],
-    default: ["USER"],
-    enum: ["USER", "ADMIN", "MERCHANT"],
+    default: [USER],
+    enum: [USER, ADMIN, MERCHANT],
   },
   address: {
     city: {
@@ -50,17 +50,18 @@ const userSchema = new mongoose.Schema({
   phone: {
     type: String,
     required: [true, "User phone number is required."],
-    unique: true,
+    unique: [true, "Phone number must be unique."],
   },
   profileImageUrl: {
     type: String,
   },
   createdAt: {
     type: Date,
-    default: Date.now, // function reference, not call
+    default: Date.now(),
     immutable: true,
   },
 });
 
-const User = mongoose.model("User", userSchema);
-export default User;
+const model = mongoose.model("User", userSchema);
+
+export default model;
