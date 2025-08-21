@@ -1,50 +1,49 @@
 import mongoose from "mongoose";
 import {
-  ORDER_STATUSES_PENDING,
-  ORDER_STATUSES_CONFORMED,
-  ORDER_STATUSES_DELIVERED,
-  ORDER_STATUSES_SHIPPED,
+  ORDER_STATUS_CONFIRMED,
+  ORDER_STATUS_DELIVERED,
+  ORDER_STATUS_PENDING,
+  ORDER_STATUS_SHIPPED,
 } from "../constants/orderStatuses.js";
 
 const orderSchema = new mongoose.Schema({
   orderNumber: {
     type: String,
-    required: [true, "Order tracking number is required"],
+    required: [true, "Order tracking number is required."],
   },
-  userId: {
+  user: {
     type: mongoose.Types.ObjectId,
     ref: "User",
-    required: [true, "User id is required"],
+    required: [true, "User id is required."],
   },
   orderItems: [
     {
-      productId: {
+      product: {
         type: mongoose.Types.ObjectId,
         ref: "Product",
-        required: [true, "Product id is required"],
+        required: [true, "Product id is required."],
       },
       quantity: { type: Number, default: 1 },
     },
   ],
   status: {
     type: String,
-    default: ORDER_STATUSES_PENDING,
+    default: ORDER_STATUS_PENDING,
     enum: [
-      ORDER_STATUSES_PENDING,
-      ORDER_STATUSES_CONFORMED,
-      ORDER_STATUSES_DELIVERED,
-      ORDER_STATUSES_SHIPPED,
+      ORDER_STATUS_CONFIRMED,
+      ORDER_STATUS_DELIVERED,
+      ORDER_STATUS_PENDING,
+      ORDER_STATUS_SHIPPED,
     ],
-
-    totalPrice: {
-      type: Number,
-      required: [true, "Total price is required."],
-    },
+  },
+  totalPrice: {
+    type: Number,
+    required: [true, "Total price is required."],
   },
   shippingAddress: {
     city: {
       type: String,
-      required: [true, "Shipping city address is required."],
+      required: [true, "Shipping address city is required."],
     },
     country: {
       type: String,
@@ -52,7 +51,7 @@ const orderSchema = new mongoose.Schema({
     },
     province: {
       type: String,
-      required: [true, "Shipping province is required."],
+      required: [true, "Shipping address province is required."],
     },
     street: {
       type: String,
@@ -61,7 +60,11 @@ const orderSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now(),
-    immutable: true, // Prevents modification after creation
+    immutable: true,
+  },
+  payment: {
+    type: mongoose.Types.ObjectId,
+    ref: "Payment",
   },
 });
 
