@@ -117,5 +117,13 @@
 - Error handling
 - Modify request data
 
+# Payment 
+1. Payment method use ( for e.g. pay via a Khalti )
+2. Update payment status in our system
+
+# Khalti
+1. Payment initialize --> Generate url using the input data 
+2. Payment occurs in the khalti portal 
+3. Redirects to your return url after completion
 
 
