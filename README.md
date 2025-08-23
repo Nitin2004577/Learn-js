@@ -127,3 +127,28 @@
 3. Redirects to your return url after completion
 
 
+# Semantics
+- Code readability
+- Code formatting
+- File and folder structure
+- File and folders naming 
+
+# Debugging 
+- Process of finding error 
+- 
+ 
+
+
+
+
+ # AI intregation 
+ - Gemini 
+
+ # Multi Vendor System 
+ Every merchant should be able to fetch:
+ 1. List of products created by them 
+ 2. Orders made on their product 
+
+ They should be able to update/delete their product.
+
+ #  
