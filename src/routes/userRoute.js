@@ -1,5 +1,5 @@
 import express from "express";
-import userController from "../controllers/userController.js";
+import userController from "../controller/userController.js";
 import roleBasedAuth from "../middlewares/roleBasedAuth.js";
 import { ADMIN } from "../constants/roles.js";
 

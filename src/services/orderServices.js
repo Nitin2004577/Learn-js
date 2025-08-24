@@ -3,7 +3,7 @@ import Payment from "../models/Payment.js";
 import crypto from "crypto";
 import payment from "../utils/payment.js";
 import { ORDER_STATUS_CONFIRMED } from "../constants/orderStatuses.js";
-import { PAYMENT_STATUS_COMPLETED } from "../constants/paymenStatuses.js";
+import { PAYMENT_STATUS_COMPLETED } from "../constants/paymentStatuses.js";
 import { ADMIN } from "../constants/roles.js";
 
 const getOrders = async () => {

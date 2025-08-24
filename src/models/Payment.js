@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 import {
-  PAYMENT_STATUS_COMPLETED,
-  PAYMENT_STATUS_FAILED,
+  PAYMENT_STATUS_CONFORMED,
+  PAYMENT_STATUS_CANCELLED,
   PAYMENT_STATUS_PENDING,
-} from "../constants/paymenStatuses.js";
+} from "../constants/paymentStatuses.js";
 
 const paymentSchema = new mongoose.Schema({
   amount: {
@@ -19,8 +19,8 @@ const paymentSchema = new mongoose.Schema({
     type: String,
     default: PAYMENT_STATUS_PENDING,
     enum: [
-      PAYMENT_STATUS_COMPLETED,
-      PAYMENT_STATUS_FAILED,
+      PAYMENT_STATUS_CONFORMED,
+      PAYMENT_STATUS_CANCELLED,
       PAYMENT_STATUS_PENDING,
     ],
   },

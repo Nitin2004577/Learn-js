@@ -1,7 +1,7 @@
 import express from "express";
 
 import auth from "../middlewares/auth.js";
-import productController from "../controllers/productController.js";
+import productController from "../controller/productController.js";
 import roleBasedAuth from "../middlewares/roleBasedAuth.js";
 import { MERCHANT } from "../constants/roles.js";
 

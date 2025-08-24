@@ -1,5 +1,5 @@
 import express from "express";
-import orderController from "../controllers/orderController.js";
+import orderController from "../controller/orderController.js";
 import roleBasedAuth from "../middlewares/roleBasedAuth.js";
 import { ADMIN, MERCHANT } from "../constants/roles.js";
 

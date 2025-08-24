@@ -2,6 +2,7 @@ import { max } from "date-fns/fp";
 import authService from "../services/authService.js";
 import { createJWT } from "../utils/jwt.js";
 
+
 const login = async (req, res) => {
   const input = req.body;
 
