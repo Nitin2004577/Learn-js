@@ -117,38 +117,40 @@
 - Error handling
 - Modify request data
 
-# Payment 
+# Payment
+
 1. Payment method use ( for e.g. pay via a Khalti )
 2. Update payment status in our system
 
 # Khalti
-1. Payment initialize --> Generate url using the input data 
-2. Payment occurs in the khalti portal 
+
+1. Payment initialize --> Generate url using the input data
+2. Payment occurs in the khalti portal
 3. Redirects to your return url after completion
 
-
 # Semantics
+
 - Code readability
 - Code formatting
 - File and folder structure
-- File and folders naming 
+- File and folders naming
 
-# Debugging 
-- Process of finding error 
-- 
- 
+# Debugging
 
+- Process of finding error
+-
 
+# AI intregation
 
+- Gemini
 
- # AI intregation 
- - Gemini 
+# Multi Vendor System
 
- # Multi Vendor System 
- Every merchant should be able to fetch:
- 1. List of products created by them 
- 2. Orders made on their product 
+Every merchant should be able to fetch:
 
- They should be able to update/delete their product.
+1.  List of products created by them
+2.  Orders made on their product
 
- #  
+They should be able to update/delete their product.
+
+#
