@@ -17,28 +17,54 @@ const address: {
 };
 
 // array types
-const phoneNumber: Number[] = [989898, 98987, 888899];
+const phoneNumber: number[] = [989898, 98987, 888899];
 
-const students: [
+const students: {
+  name: string;
+  class: number;
+  section: string;
+  phone: number[];
+}[] = [
   {
-    name: "ram";
-    class: 10;
-    section: "A";
+    name: "ram",
+    class: 10,
+    section: "A",
+    phone: [989898, 98987, 888899],
   },
   {
-    name: "sita";
-    class: 11;
-    section: "C";
+    name: "sita",
+    class: 11,
+    section: "C",
+    phone: [989898, 98987, 888899],
   },
   {
-    name: "hari";
-    class: 12;
-    section: "B";
-  }
+    name: "hari",
+    class: 12,
+    section: "B",
+    phone: [989898, 98987, 888899],
+  },
 ];
 
 // any -> dynamic (not recommended to use  )
 const myVar: any = true;
-
+// multiple types 
 const phone: string | number = "1234567890";
-console.log(name);
+
+// enum (fixed) types 
+const  role: "USER" | "ADMIN" | "MERCHANT" = "USER";
+
+// FUNCTION 
+//  Function Type
+//  function's params type
+//  function's return type
+
+function sum(a: number, b: number): number {
+    return a + b;
+}
+sum(11, 33343);
+
+const greet: | = (name: string):  string =>  {
+    return `hello ${name}`;
+
+};
+greet("ram");
