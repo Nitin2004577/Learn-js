@@ -1,93 +1,156 @@
-# Learn JS
+# Express JS
 
+# npm init -y
 
+# npm install express
 
-## Getting started
+# Cases
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+1. Sentence case: Hello World
+2. Camel case: helloWorld
+3. Pascal case: HelloWorld
+4. kebab case: hello-world
+5. snake case: hello_world
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+# Model
 
-## Add your files
+- Class built from schema, interact with the database
+- semantics: Always singular, pascal case
+- For e.g. Product, ProductOrder
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+# Mongoose
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/shahnitin500/learn-js.git
-git branch -M main
-git push -uf origin main
-```
+- ODM of Mongoose for Node.js
+- Schema validation
+- Models
+- Middleware
+- Relationship
 
-## Integrate with your tools
+# Schema
 
-- [ ] [Set up project integrations](https://gitlab.com/shahnitin500/learn-js/-/settings/integrations)
+- id, name, age, email, phone, isActive
+- Structure/rule of a document/data
 
-## Collaborate with your team
+# Model
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+- Class built from schema, interact with the database
+-
 
-## Test and Deploy
+# Encryption and Decryption
 
-Use the built-in continuous integration in GitLab.
+- Encryption: Converting normal readable text to cipher (unreadable) text.
+- for e.g: hello => asas87549843\*7jsdkekan$
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+-Decryption: Converting cipher text to readable form.
 
-***
+# Types
 
-# Editing this README
+1. Symmetric: Same key is used for encryption and decryption.
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+2. Asymmetric: Different Key are used into encryption and decryption for private RSA algorithm.
 
-## Suggestions for a good README
+# Hashing
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+- Type of encryption, this is one way encryption.
+  -Register: Test1111 => aasmndasnmda@3mmmamam(store)
+  -Login: Test1111 => aasmndasnmda@3mmmamam(compare)
 
-## Name
-Choose a self-explaining name for your project.
+# Salt
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+- Adding random texts in the hash value
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+# Auth
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+1. Login success
+2. Token generated - JWT
+3. store token: cookie storage, session storage , local storage.
+4. Append this token in every request to handle auth
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+# JWT - JSON Web Token
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+- Used for auth
+- Self verified
+- Tamper-proof
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+### Structure
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+1. Header: which algorithms is used.
+2. Payload:
+3. Signature: check any things was changed or not.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+# Cookie
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+- can be stored in both server and browser
+- Size: 4KB
+- Expiry date can be set
+- Available in all tab
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+# Session storage
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+- Can be stored only in browser
+- Size: 5MB
+- Expires on tab close
+- Available in one tab only
 
-## License
-For open source projects, say how it is licensed.
+# Local Storage
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+- Can be stored only in browser
+- Size: 5MB - 10MB
+- Never Expires
+- Available in all tabs
+
+# Middleware
+
+- Function that sits between request and response.
+- Browser sends -----> Request to -----> Server
+  Middleware
+  Server ------> Response ---------> Browser
+
+- FUnction that has the accessibility of both request and response object
+- It has the functionality to go the next function call
+-
+
+## Usages
+
+- Logging
+- Authentication & AUthorization
+- Error handling
+- Modify request data
+
+# Payment
+
+1. Payment method use ( for e.g. pay via a Khalti )
+2. Update payment status in our system
+
+# Khalti
+
+1. Payment initialize --> Generate url using the input data
+2. Payment occurs in the khalti portal
+3. Redirects to your return url after completion
+
+# Semantics
+
+- Code readability
+- Code formatting
+- File and folder structure
+- File and folders naming
+
+# Debugging
+
+- Process of finding error
+-
+
+# AI intregation
+
+- Gemini
+
+# Multi Vendor System
+
+Every merchant should be able to fetch:
+
+1.  List of products created by them
+2.  Orders made on their product
+
+They should be able to update/delete their product.
+
+#
