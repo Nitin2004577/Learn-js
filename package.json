@@ -1,0 +1,29 @@
+{
+  "name": "nodejs",
+  "version": "0.1.0",
+  "description": "Mern stack project",
+  "homepage": "https://gitlab.com/shahnitin500/learn-js#readme",
+  "bugs": {
+    "url": "https://gitlab.com/shahnitin500/learn-js/issues",
+    "type": "module"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/shahnitin500/learn-js.git"
+  },
+  "license": "ISC",
+  "author": "Nitin",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node path.js",
+    "dev": "nodemon modules/https.js"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
